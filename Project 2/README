@@ -1,0 +1,8 @@
+This project requires you to run the .exe with the text files
+I have included them along with the exe so you can run the finished product
+
+This project focused on using functions and pass by reference in C++
+The goal was to create a mini-MUD game similar in style to the text adventure games of the 80s
+If you want to write your own story, just follow the format of the text files and the game will read it!
+
+The longest game is Lunch, with DOG and CAT being intended for testing.

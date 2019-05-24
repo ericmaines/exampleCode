@@ -1,0 +1,75 @@
+/* CSS Document */
+
+body{
+	background-image:linear-gradient(to right, blue,white,white, white)
+}
+header{
+	color:grey;
+}
+
+header ul{
+	list-style-type:none;
+	padding:0.5em;
+	display:flex;
+	flex-direction:column;
+	justify-context:space-around;
+}
+
+header ul li {
+	margin-top:1.5em;
+	margin-bottom:1.5em;
+}
+
+header ul li a {
+	color:white;
+	text-decoration:none;
+}
+
+form{
+	border: solid aliceblue;
+	height:auto;
+	width:175px;
+	padding:10px;
+	background-color:aliceblue
+}
+
+.pageLayoutGrid{
+	display:grid;
+	grid-column-gap:0.5em;
+	grid-row-gap:1em;
+	grid-template-rows:auto;
+	grid-template columns: 2fr 1fr 1fr;
+	grid-template-areas:
+		"gHeader gTitle gPhoto1"
+		"gHeader . ."
+	
+}
+
+.headerLayoutGrid{
+	grid-area: gHeader;
+}
+
+.titleGrid{
+	grid-area:gTitle
+}
+
+.photoGrid{
+	grid-area:gPhoto1
+}
+
+.smallPic{
+	width: 200px;
+}
+
+.medPic{
+	width:400px;
+}
+
+.largePic{
+	width:600px;
+}
+
+.linkText{
+	text-decoration:none;
+	color: inherit;
+}

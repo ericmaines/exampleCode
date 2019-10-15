@@ -1,0 +1,90 @@
+#!/bin/bash
+# Provide a simple math tutor for a second-grade student in an elementary school
+# Repeatedly display the main menu to let the user choose an option (enter Q or q to quit):
+#    if opiton is 1, generate an addition problem for the user to solve
+#    if opiton is 2, generate a subtraction problem for the user to solve
+#    if opiton is 3, generate a multiplication problem for the user to solve
+#    if other option, display the message of invalid choice.
+# For each option of 1, 2, or 3, it should wait for the user to enter the answer
+#    if the answer is correct, a message of congratulations should be displayed
+#    if the answer is wrong, the correct answer should be displayed
+
+echo "     Math Is Fun! Take a challenge..."
+echo "-------------------------------------"
+echo "1. Addition problem"
+echo "2. Subtraction problem"
+echo "3. Multiplication problem"
+echo "-------------------------------------"
+echo "Please input your menu option (enter Q or q to quit)"
+read usr_option
+
+# Your script should start here
+# create a loop to repeatedly ask the user to input the option from the main menu until the user enters Q or q to quit
+while [[ $usr_option != 'q' && $usr_option != 'Q' ]]
+do
+    case $usr_option in
+        1)
+            firstInt=$[ RANDOM%51 ]
+            secondInt=$[ RANDOM%51 ]
+            answer=$[ firstInt + secondInt ]
+            echo $firstInt "+" $secondInt "= ? "
+            read addAns 
+        while [ $addAns -ne $answer ]
+        do
+            echo "That is not the answer. Please try again!"
+            echo $firstInt "+" $secondInt "= ? "
+            read addAns
+        done
+        echo "Congratulations! That is right! :)"
+        ;;
+        2)
+            firstInt=$[ RANDOM%51 ]
+            secondInt=$[ RANDOM%51 ]
+            answer=$[ firstInt - secondInt ]
+            while [ $answer -lt 0 ]
+            do
+                firstInt=$[ (RANDOM%50) +1 ]
+                secondInt=$[ (RANDOM%50) +1 ]
+                answer=$[ firstInt - secondInt ]
+            done
+            echo $firstInt "-" $secondInt "= ? "
+            read subAns
+            while [ $subAns -ne $answer ]
+            do
+                echo "That is not the answer. Please try again!"
+                echo $firstInt "-" $secondInt "= ? "
+                read subAns
+            done
+            echo "Congratulations! That is right! :)"
+        ;;
+        3)
+            firstInt=$[ (RANDOM%10) +1 ]
+            secondInt=$[ (RANDOM%10) +1 ]
+            answer=$[ firstInt * secondInt ]
+            echo $firstInt "*" $secondInt "= ? "
+            read multAns
+            while [ $multAns -ne $answer ]
+            do
+                echo "That is not the answer. Please try again!"
+                echo $firstInt "*" $secondInt "= ? "
+                read multAns
+            done
+            echo "Congratulations! That is right! :)"
+        ;;
+    *)
+        echo "That is not a valid selection. Please pick one of the options from above!"
+        ;;
+
+    esac
+    printf "\n \n"
+echo "     Math Is Fun! Take a challenge..."
+echo "-------------------------------------"
+echo "1. Addition problem"
+echo "2. Subtraction problem"
+echo "3. Multiplication problem"
+echo "-------------------------------------"
+echo "Please input your menu option (enter Q or q to quit)"
+read usr_option
+done
+
+echo "Thank you for practicing math with me!"

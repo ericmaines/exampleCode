@@ -1,0 +1,12 @@
+#!/bin/bash
+#This code will randomly generate a 5-digit number
+
+echo "Would you like to randomly generate a 5-digit number today?"
+read uInput
+if [ $uInput == "y"  ]
+then
+    randNum=$[ ($RANDOM%99999) +10000 ]
+    echo "Your random number is " $randNum
+else
+    echo "Thank you for booting me up today!"
+fi

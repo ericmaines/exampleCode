@@ -1,0 +1,7 @@
+#4 0x0000555555587658 in analyzeCoActors (imdb=...) at Lab9.cpp:141
+#5 0x000055555558632a in main (arcg=2, argv=0x7fffffffe478) at Lab9.cpp:107
+Instead of using cin, you need to use getline() to avoid ignoring the spaces in input
+
+1. It displays the error multiple times because we are using cin as a way to get the input from the user. 
+2. The first value is two, the second value is and, and the third value is one.
+3. The solution would be to use getline() instead of cin and verify with cin.fail().

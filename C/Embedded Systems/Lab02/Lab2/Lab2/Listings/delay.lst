@@ -1,0 +1,177 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; Credit: Based on software by Valvano
+    2 00000000         
+    3 00000000                 AREA             |.text|, CODE, READONLY, ALIGN=
+2
+    4 00000000                 THUMB
+    5 00000000                 EXPORT           delay
+    6 00000000                 EXPORT           delay_dim
+    7 00000000         
+    8 00000000         
+    9 00000000         
+   10 00000000         ;------------delay------------
+   11 00000000         ; Delay function for testing
+   12 00000000         ; Input: none
+   13 00000000         ; Output: none 
+   14 00000000 00000003 
+                       DELAYVAL
+                               EQU              3           ;Change to calculat
+                                                            ed value
+   15 00000000 00145855 
+                       NEWVAL  EQU              1333333
+   16 00000000 00000004 
+                       REDVAL  EQU              4
+   17 00000000 00000003 
+                       BLUEVAL EQU              3
+   18 00000000 00000002 
+                       GREENVAL
+                               EQU              2
+   19 00000000         delay
+   20 00000000         ;Add Part 2 code here
+   21 00000000 4804            LDR              R0, =NEWVAL
+   22 00000002         newDelay_dim_loop
+   23 00000002 1E40            SUBS             R0, R0, #1
+   24 00000004 D1FD            BNE              newDelay_dim_loop
+   25 00000006 4770            BX               LR
+   26 00000008                 ALIGN
+   27 00000008         
+   28 00000008         
+   29 00000008 00003E80 
+                       DIMSEC  EQU              16000       ; delay_dim_loop wi
+                                                            ll run this many ti
+                                                            me to create a dela
+                                                            y
+   30 00000008         
+   31 00000008         delay_dim
+   32 00000008 F44F 507A       LDR              R0, =DIMSEC ; put the value of 
+                                                            DIMSEC into R0
+   33 0000000C         delay_dim_loop
+   34 0000000C 1E40            SUBS             R0, R0, #1  ; R0 = R0 - 1
+   35 0000000E D1FD            BNE              delay_dim_loop ; repeat until R
+                                                            0 == 0
+   36 00000010 4770            BX               LR          ; return
+   37 00000012         
+   38 00000012 00 00           ALIGN                        ; make sure the end
+                                                             of this section is
+                                                             aligned
+   39 00000014                 END                          ; end of file
+              00145855 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --apcs=interw
+ork --depend=.\objects\delay.d -o.\objects\delay.o -I.\RTE\_Target_1 -IC:\Users
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+\ericm\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\Device\ARM\ARMCM4\Include -IC:\K
+eil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VER
+SION SETA 529" --predefine="ARMCM4 SETA 1" --list=.\listings\delay.lst delay.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 3 in file delay.s
+   Uses
+      None
+Comment: .text unused
+delay 00000000
+
+Symbol: delay
+   Definitions
+      At line 19 in file delay.s
+   Uses
+      At line 5 in file delay.s
+Comment: delay used once
+delay_dim 00000008
+
+Symbol: delay_dim
+   Definitions
+      At line 31 in file delay.s
+   Uses
+      At line 6 in file delay.s
+Comment: delay_dim used once
+delay_dim_loop 0000000C
+
+Symbol: delay_dim_loop
+   Definitions
+      At line 33 in file delay.s
+   Uses
+      At line 35 in file delay.s
+Comment: delay_dim_loop used once
+newDelay_dim_loop 00000002
+
+Symbol: newDelay_dim_loop
+   Definitions
+      At line 22 in file delay.s
+   Uses
+      At line 24 in file delay.s
+Comment: newDelay_dim_loop used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+BLUEVAL 00000003
+
+Symbol: BLUEVAL
+   Definitions
+      At line 17 in file delay.s
+   Uses
+      None
+Comment: BLUEVAL unused
+DELAYVAL 00000003
+
+Symbol: DELAYVAL
+   Definitions
+      At line 14 in file delay.s
+   Uses
+      None
+Comment: DELAYVAL unused
+DIMSEC 00003E80
+
+Symbol: DIMSEC
+   Definitions
+      At line 29 in file delay.s
+   Uses
+      At line 32 in file delay.s
+Comment: DIMSEC used once
+GREENVAL 00000002
+
+Symbol: GREENVAL
+   Definitions
+      At line 18 in file delay.s
+   Uses
+      None
+Comment: GREENVAL unused
+NEWVAL 00145855
+
+Symbol: NEWVAL
+   Definitions
+      At line 15 in file delay.s
+   Uses
+      At line 21 in file delay.s
+Comment: NEWVAL used once
+REDVAL 00000004
+
+Symbol: REDVAL
+   Definitions
+      At line 16 in file delay.s
+   Uses
+      None
+Comment: REDVAL unused
+6 symbols
+346 symbols in table

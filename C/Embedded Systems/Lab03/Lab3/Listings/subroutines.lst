@@ -1,0 +1,223 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         
+    3 00000000                 AREA             |.text|, CODE, READONLY, ALIGN=
+2
+    4 00000000                 THUMB
+    5 00000000                 export           exp
+    6 00000000                 EXPORT           mulsum4
+    7 00000000                 IMPORT           green_led_on
+    8 00000000                 IMPORT           red_led_on
+    9 00000000                 IMPORT           leds_off
+   10 00000000         ;Be sure to export created functions
+   11 00000000         
+   12 00000000         
+   13 00000000         
+   14 00000000         
+   15 00000000         
+   16 00000000         
+   17 00000000         ;Should perform the operation (R0+R1)^R0
+   18 00000000         ;Takes the sum of R0 and R1 and multiplies it by itself 
+                       R0 times (i.e. raises R0+R1 to the power of R0)
+   19 00000000         ;Assume R0 is greater than 0
+   20 00000000         ;Should return the result in R0
+   21 00000000         ;Inputs: R0 and R1
+   22 00000000         ;Outputs: R0
+   23 00000000         exp
+   24 00000000 4602            MOV              R2, R0      ;store r0 in r2
+   25 00000002 2A00            CMP              R2, #0      ;compare r2 and 0
+   26 00000004 D008            BEQ              done        ;if it is zero, jum
+                                                            p to done
+   27 00000006         
+   28 00000006         ;SUBS R2, R2, #1
+   29 00000006 1809            ADDS             R1, R1, R0  ;add r0 to r1 and s
+                                                            tore in r1... r1 =(
+                                                            r0+r1)
+   30 00000008 F04F 0301       MOV              R3, #1      ;move the value of 
+                                                            1 into r3
+   31 0000000C         power
+   32 0000000C FB01 F303       MUL              R3, R1, R3  ;multiply r1 by r3
+   33 00000010 1E52            SUBS             R2, R2, #1
+   34 00000012 DCFB            BGT              power
+   35 00000014         
+   36 00000014 4618            MOV              R0, R3
+   37 00000016 4770            BX               LR
+   38 00000018         
+   39 00000018         done
+   40 00000018 F04F 0001       MOV              R0, #1
+   41 0000001C 4770            BX               LR
+   42 0000001E         
+   43 0000001E         
+   44 0000001E         ;Should perform the operation (A+B+C)*(B+C+D)*2 
+   45 0000001E         ;A, B, C, and D are passed in order in R0-R3
+   46 0000001E         ;Should return the result in R0
+   47 0000001E         ;Inputs: R0, R1, R2, and R3
+   48 0000001E         ;Outputs: R0
+   49 0000001E         mulsum4
+   50 0000001E B500            PUSH{LR}                     ;store the link reg
+                                                            ister in the stack
+   51 00000020 B40E            PUSH{r1-r3}                  ;store B, C, D on t
+                                                            he stack
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   52 00000022         ; Should make calls to both sum3 and mul3
+   53 00000022 F000 F80E       BL               sum3
+   54 00000026 B401            PUSH{r0}                     ;store (A+B+C) on t
+                                                            he stack
+   55 00000028 BC08            POP{r3}                      ;store the value in
+                                                            to r3 temporarily
+   56 0000002A BC07            POP{r0-r2}                   ;put D, C, B into r
+                                                            0-r2
+   57 0000002C B408            PUSH{r3}                     ;put (A+B+C) back o
+                                                            nto the stack
+   58 0000002E         
+   59 0000002E F000 F808       BL               sum3        ;add B, C, D togeth
+                                                            er
+   60 00000032         ;(B+C+D) is in r0
+   61 00000032 BC02            POP{r1}                      ;pop (A+B+C) into r
+                                                            1
+   62 00000034 F04F 0202       MOV              R2, #2      ;move #2 into r2
+   63 00000038 F000 F808       BL               mul3        ;multiply r0*r1*r2
+   64 0000003C         
+   65 0000003C F85D EB04       POP{LR}                      ;put the return add
+                                                            ress back into LR
+   66 00000040         
+   67 00000040 4770            BX               LR
+   68 00000042         
+   69 00000042         
+   70 00000042         
+   71 00000042         
+   72 00000042         ;Performs the operation R0+R1+R2
+   73 00000042         ;Returns the sum in R0
+   74 00000042         ;Inputs: R0, R1, and R2
+   75 00000042         ;Outputs: R0
+   76 00000042         sum3
+   77 00000042 EB00 0301       ADD              R3, R0, R1
+   78 00000046 EB02 0003       ADD              R0, R2, R3
+   79 0000004A 4770            BX               LR
+   80 0000004C         
+   81 0000004C         ;Should perform the operation R0*R1*R2
+   82 0000004C         ;Should return the product in R0
+   83 0000004C         ;Inputs: R0, R1, and R2
+   84 0000004C         ;Outputs: R0
+   85 0000004C         mul3
+   86 0000004C         
+   87 0000004C         ;Your code here
+   88 0000004C FB00 F301       MUL              R3, R0, R1
+   89 00000050 FB02 F003       MUL              R0, R2, R3
+   90 00000054 4770            BX               LR
+   91 00000056         
+   92 00000056         
+   93 00000056 00 00           ALIGN
+   94 00000058                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --apcs=interw
+ork --depend=.\objects\subroutines.d -o.\objects\subroutines.o -I.\RTE\_Target_
+1 -IC:\Users\ericm\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\Device\ARM\ARMCM4\In
+clude -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="_
+_UVISION_VERSION SETA 529" --predefine="ARMCM4 SETA 1" --list=.\listings\subrou
+tines.lst subroutines.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 3 in file subroutines.s
+   Uses
+      None
+Comment: .text unused
+done 00000018
+
+Symbol: done
+   Definitions
+      At line 39 in file subroutines.s
+   Uses
+      At line 26 in file subroutines.s
+Comment: done used once
+exp 00000000
+
+Symbol: exp
+   Definitions
+      At line 23 in file subroutines.s
+   Uses
+      At line 5 in file subroutines.s
+Comment: exp used once
+mul3 0000004C
+
+Symbol: mul3
+   Definitions
+      At line 85 in file subroutines.s
+   Uses
+      At line 63 in file subroutines.s
+Comment: mul3 used once
+mulsum4 0000001E
+
+Symbol: mulsum4
+   Definitions
+      At line 49 in file subroutines.s
+   Uses
+      At line 6 in file subroutines.s
+Comment: mulsum4 used once
+power 0000000C
+
+Symbol: power
+   Definitions
+      At line 31 in file subroutines.s
+   Uses
+      At line 34 in file subroutines.s
+Comment: power used once
+sum3 00000042
+
+Symbol: sum3
+   Definitions
+      At line 76 in file subroutines.s
+   Uses
+      At line 53 in file subroutines.s
+      At line 59 in file subroutines.s
+
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+green_led_on 00000000
+
+Symbol: green_led_on
+   Definitions
+      At line 7 in file subroutines.s
+   Uses
+      None
+Comment: green_led_on unused
+leds_off 00000000
+
+Symbol: leds_off
+   Definitions
+      At line 9 in file subroutines.s
+   Uses
+      None
+Comment: leds_off unused
+red_led_on 00000000
+
+Symbol: red_led_on
+   Definitions
+      At line 8 in file subroutines.s
+   Uses
+      None
+Comment: red_led_on unused
+3 symbols
+343 symbols in table

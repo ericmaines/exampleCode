@@ -1,0 +1,51 @@
+/home/edma236
+total 48
+drwxr-xr-x 2 edma236 edma236 4096 Aug 27 19:07 Desktop
+drwxr-xr-x 2 edma236 edma236 4096 Aug 27 19:07 Documents
+drwxr-xr-x 2 edma236 edma236 4096 Aug 27 19:07 Downloads
+-rw-r--r-- 1 edma236 edma236 8980 Oct  4  2013 examples.desktop
+-rw-rw-r-- 1 edma236 edma236   14 Aug 28 11:06 file1
+drwxr-xr-x 2 edma236 edma236 4096 Aug 27 19:07 Music
+drwxr-xr-x 2 edma236 edma236 4096 Aug 27 19:07 Pictures
+drwxr-xr-x 2 edma236 edma236 4096 Aug 27 19:07 Public
+drwxr-xr-x 2 edma236 edma236 4096 Aug 27 19:07 Templates
+drwxr-xr-x 2 edma236 edma236 4096 Aug 27 19:07 Videos
+ ___________________________________
+< Hello, Yu Zhang. I am Eric Maines >
+ -----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+    1  man
+    2  la
+    3  ls
+    4  cd Documents
+    5  cd ..
+    6  cd ~
+    7  whoami
+    8  ls
+    9  pwd
+   10  pwd > file1
+   11  cat file1
+   12  ls -1
+   13  ls -l
+   14  ls -l >> file1
+   15  LS
+   16  cowsay "Hello, Yu Zhang. I am Eric Maines" >> file1
+   17  cat file1
+   18  echo shell
+   19  echo $shell
+   20  echo $SHELL
+   21  man ls
+   22  man man
+   23  history > file2
+                                                                             
+ mmmmmm           "                          mmm   mmmm   mmmm  mmm      mmm 
+ #      m mm    mmm    mmm   m   m         m"   " #"   " "   "#   #    m"   "
+ #mmmmm #"  #     #   #" "#  "m m"         #      "#mmm      m"   #    #m""#m
+ #      #   #     #   #   #   #m#          #          "#   m"     #    #    #
+ #mmmmm #   #     #   "#m#"   "#            "mmm" "mmm#" m#mmmm mm#mm   #mm#"
+                  #           m"                                             
+                ""           ""                                              

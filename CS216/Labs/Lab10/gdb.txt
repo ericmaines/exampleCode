@@ -1,0 +1,266 @@
+Breakpoint 1 at 0x31c52: file Lab10.cpp, line 28.
+Function "break 54" not defined.
+Breakpoint 2 at 0x31dc7: file Lab10.cpp, line 54.
+Breakpoint 3 at 0x3207b: file Lab10.cpp, line 94.
+Breakpoint 4 at 0x320cb: file Lab10.cpp, line 97.
+Breakpoint 5 at 0x31d01: file Lab10.cpp, line 34.
+Breakpoint 6 at 0x31d0b: file Lab10.cpp, line 37.
+Breakpoint 7 at 0x31d1a: file Lab10.cpp, line 38.
+Breakpoint 8 at 0x31db8: file Lab10.cpp, line 48.
+Breakpoint 9 at 0x31e69: file Lab10.cpp, line 61.
+Breakpoint 10 at 0x32311: file Lab10.cpp, line 118.
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000031c52 in main(int, char**) at Lab10.cpp:28
+2       breakpoint     keep y   0x0000000000031dc7 in main(int, char**) at Lab10.cpp:54
+3       breakpoint     keep y   0x000000000003207b in main(int, char**) at Lab10.cpp:94
+4       breakpoint     keep y   0x00000000000320cb in main(int, char**) at Lab10.cpp:97
+5       breakpoint     keep y   0x0000000000031d01 in main(int, char**) at Lab10.cpp:34
+6       breakpoint     keep y   0x0000000000031d0b in main(int, char**) at Lab10.cpp:37
+7       breakpoint     keep y   0x0000000000031d1a in main(int, char**) at Lab10.cpp:38
+8       breakpoint     keep y   0x0000000000031db8 in main(int, char**) at Lab10.cpp:48
+9       breakpoint     keep y   0x0000000000031e69 in main(int, char**) at Lab10.cpp:61
+10      breakpoint     keep y   0x0000000000032311 in main(int, char**) at Lab10.cpp:118
+Starting program: /home/edma236/Documents/CS216/Labs/Lab10/Lab10 actor_movies.txt
+
+Breakpoint 1, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:28
+28	{
+No symbol "variable" in current context.
+$1 = 2
+$2 = (const int *) 0x555555588978 <ARGUMENTS>
+30	    if (argc != ARGUMENTS)
+
+Breakpoint 6, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:37
+37	    ifstream in_file;
+Continuing.
+
+Breakpoint 7, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:38
+38	    in_file.open(argv[1]);
+Continuing.
+
+Breakpoint 8, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:52
+52	    IMDB cs216_imdb;
+Continuing.
+
+Breakpoint 2, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:54
+54	    while (!in_file.eof())
+Continuing.
+
+Breakpoint 9, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:63
+63	        iss>>ws;
+Continuing.
+
+Breakpoint 2, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:54
+54	    while (!in_file.eof())
+Quit
+The program is not being run.
+Starting program: /home/edma236/Documents/CS216/Labs/Lab10/Lab10 actor_movies.txt
+[Inferior 1 (process 18676) exited normally]
+Breakpoint 1 at 0x555555585c52: file Lab10.cpp, line 28.
+Breakpoint 2 at 0x555555585dc7: file Lab10.cpp, line 54.
+Breakpoint 3 at 0x55555558607b: file Lab10.cpp, line 94.
+Breakpoint 4 at 0x5555555860cb: file Lab10.cpp, line 97.
+Breakpoint 5 at 0x555555585d01: file Lab10.cpp, line 34.
+Breakpoint 6 at 0x555555585d0b: file Lab10.cpp, line 37.
+Breakpoint 7 at 0x555555585d1a: file Lab10.cpp, line 38.
+Breakpoint 8 at 0x555555585db8: file Lab10.cpp, line 48.
+Breakpoint 9 at 0x555555585e69: file Lab10.cpp, line 61.
+Breakpoint 10 at 0x555555586311: file Lab10.cpp, line 118.
+Starting program: /home/edma236/Documents/CS216/Labs/Lab10/Lab10 actor_movies.txt
+
+Breakpoint 1, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:28
+28	{
+$1 = 2
+$2 = (int *) 0x7fffffffde6c
+$3 = 2
+$4 = (int *) 0x7fffffffde6c
+$5 = 0x7fffffffe6c3 "/home/edma236/Documents/CS216/Labs/Lab10/Lab10"
+$6 = (char **) 0x7fffffffe478
+$7 = 0x7fffffffe6f2 "actor_movies.txt"
+$8 = (char **) 0x7fffffffe480
+Quit
+Continuing.
+
+Breakpoint 6, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:37
+37	    ifstream in_file;
+$9 = '\000' <repeats 113 times>
+$10 = (char (*)[114]) 0x7ffff7830b20 <result>
+Continuing.
+
+Breakpoint 7, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:38
+38	    in_file.open(argv[1]);
+$11 = '\000' <repeats 113 times>
+$12 = (char (*)[114]) 0x7ffff7830b20 <result>
+Continuing.
+
+Breakpoint 8, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:52
+52	    IMDB cs216_imdb;
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000555555585c52 in main(int, char**) at Lab10.cpp:28
+	breakpoint already hit 1 time
+2       breakpoint     keep y   0x0000555555585dc7 in main(int, char**) at Lab10.cpp:54
+3       breakpoint     keep y   0x000055555558607b in main(int, char**) at Lab10.cpp:94
+4       breakpoint     keep y   0x00005555555860cb in main(int, char**) at Lab10.cpp:97
+5       breakpoint     keep y   0x0000555555585d01 in main(int, char**) at Lab10.cpp:34
+6       breakpoint     keep y   0x0000555555585d0b in main(int, char**) at Lab10.cpp:37
+	breakpoint already hit 1 time
+7       breakpoint     keep y   0x0000555555585d1a in main(int, char**) at Lab10.cpp:38
+	breakpoint already hit 1 time
+8       breakpoint     keep y   0x0000555555585db8 in main(int, char**) at Lab10.cpp:48
+	breakpoint already hit 1 time
+9       breakpoint     keep y   0x0000555555585e69 in main(int, char**) at Lab10.cpp:61
+10      breakpoint     keep y   0x0000555555586311 in main(int, char**) at Lab10.cpp:118
+No symbol "fcout" in current context.
+No symbol "fcount" in current context.
+No symbol "fcount" in current context.
+Continuing.
+
+Breakpoint 2, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:54
+54	    while (!in_file.eof())
+No symbol "fcount" in current context.
+No symbol "fcount" in current context.
+$13 = (IMDB *) 0x7fffffffdef0
+Continuing.
+
+Breakpoint 9, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:63
+63	        iss>>ws;
+No symbol "part" in current context.
+Continuing.
+
+Breakpoint 2, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:54
+54	    while (!in_file.eof())
+Continuing.
+
+Breakpoint 9, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:63
+63	        iss>>ws;
+Continuing.
+
+Breakpoint 2, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:54
+54	    while (!in_file.eof())
+Continuing.
+
+Breakpoint 9, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:63
+63	        iss>>ws;
+No breakpoint number 54.
+Num     Type           Disp Enb Address            What
+3       breakpoint     keep y   0x000055555558607b in main(int, char**) at Lab10.cpp:94
+4       breakpoint     keep y   0x00005555555860cb in main(int, char**) at Lab10.cpp:97
+5       breakpoint     keep y   0x0000555555585d01 in main(int, char**) at Lab10.cpp:34
+6       breakpoint     keep y   0x0000555555585d0b in main(int, char**) at Lab10.cpp:37
+	breakpoint already hit 1 time
+7       breakpoint     keep y   0x0000555555585d1a in main(int, char**) at Lab10.cpp:38
+	breakpoint already hit 1 time
+8       breakpoint     keep y   0x0000555555585db8 in main(int, char**) at Lab10.cpp:48
+	breakpoint already hit 1 time
+9       breakpoint     keep y   0x0000555555585e69 in main(int, char**) at Lab10.cpp:61
+	breakpoint already hit 3 times
+10      breakpoint     keep y   0x0000555555586311 in main(int, char**) at Lab10.cpp:118
+Num     Type           Disp Enb Address            What
+3       breakpoint     keep y   0x000055555558607b in main(int, char**) at Lab10.cpp:94
+4       breakpoint     keep y   0x00005555555860cb in main(int, char**) at Lab10.cpp:97
+5       breakpoint     keep y   0x0000555555585d01 in main(int, char**) at Lab10.cpp:34
+8       breakpoint     keep y   0x0000555555585db8 in main(int, char**) at Lab10.cpp:48
+	breakpoint already hit 1 time
+9       breakpoint     keep y   0x0000555555585e69 in main(int, char**) at Lab10.cpp:61
+	breakpoint already hit 3 times
+10      breakpoint     keep y   0x0000555555586311 in main(int, char**) at Lab10.cpp:118
+Continuing.
+
+Breakpoint 9, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:63
+63	        iss>>ws;
+Continuing.
+
+Breakpoint 9, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:63
+63	        iss>>ws;
+Continuing.
+
+Breakpoint 9, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:63
+63	        iss>>ws;
+Continuing.
+
+Breakpoint 3, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:94
+94	    magicString validName(inputname);
+$14 = (std::__cxx11::string *) 0x7fffffffdf90
+$15 = "Jack Black"
+Continuing.
+
+Breakpoint 4, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:97
+97	    while (validName.toLower() != "quit")
+$16 = {str = "Jack Black"}
+$17 = (magicString *) 0x7fffffffdfb0
+Continuing.
+
+Breakpoint 10, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:119
+119	                movieCount++;
+Continuing.
+
+Breakpoint 10, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:119
+119	                movieCount++;
+Continuing.
+
+Breakpoint 10, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:119
+119	                movieCount++;
+Num     Type           Disp Enb Address            What
+3       breakpoint     keep y   0x000055555558607b in main(int, char**) at Lab10.cpp:94
+	breakpoint already hit 1 time
+4       breakpoint     keep y   0x00005555555860cb in main(int, char**) at Lab10.cpp:97
+	breakpoint already hit 1 time
+5       breakpoint     keep y   0x0000555555585d01 in main(int, char**) at Lab10.cpp:34
+8       breakpoint     keep y   0x0000555555585db8 in main(int, char**) at Lab10.cpp:48
+	breakpoint already hit 1 time
+10      breakpoint     keep y   0x0000555555586311 in main(int, char**) at Lab10.cpp:118
+	breakpoint already hit 3 times
+Breakpoint 1 at 0x32258: file Lab10.cpp, line 113.
+Breakpoint 2 at 0x320cb: file Lab10.cpp, line 97.
+Breakpoint 3 at 0x31d01: file Lab10.cpp, line 34.
+Breakpoint 4 at 0x31db8: file Lab10.cpp, line 48.
+Breakpoint 5 at 0x31e69: file Lab10.cpp, line 61.
+Starting program: /home/edma236/Documents/CS216/Labs/Lab10/Lab10 actor_movies.txt
+
+Breakpoint 4, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:52
+52	    IMDB cs216_imdb;
+No symbol "fcount" in current context.
+Continuing.
+
+Breakpoint 2, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:97
+97	    while (validName.toLower() != "quit")
+magicString::toLower[abi:cxx11]() const (this=0x7fffffffdfb0) at magicString.cpp:35
+35	{
+$1 = (const magicString * const) 0x7fffffffdfb0
+$2 = (const magicString * const *) 0x7fffffffde20
+Continuing.
+
+Breakpoint 1, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:113
+113	            cout << validName.toUpper() << " was in: " << endl;
+Breakpoint 6 at 0x555555585db8: file Lab10.cpp, line 48.
+Breakpoint 7 at 0x555555585e69: file Lab10.cpp, line 61.
+magicString::toUpper[abi:cxx11]() const (this=0x7fffffffdfb0) at magicString.cpp:45
+45	{
+$3 = 0
+$4 = (int *) 0x5555557a06c0 <magicString::toUpper[abi:cxx11]() const::fcount>
+$5 = (const magicString * const) 0x7fffffffdfb0
+$6 = (const magicString * const *) 0x7fffffffdd90
+Continuing.
+
+Breakpoint 2, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:97
+97	    while (validName.toLower() != "quit")
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000555555586258 in main(int, char**) at Lab10.cpp:113
+	breakpoint already hit 1 time
+2       breakpoint     keep y   0x00005555555860cb in main(int, char**) at Lab10.cpp:97
+	breakpoint already hit 2 times
+6       breakpoint     keep y   0x0000555555585db8 in main(int, char**) at Lab10.cpp:48
+7       breakpoint     keep y   0x0000555555585e69 in main(int, char**) at Lab10.cpp:61
+Continuing.
+[Inferior 1 (process 18994) exited normally]
+Starting program: /home/edma236/Documents/CS216/Labs/Lab10/Lab10 actor_movies.txt
+
+Breakpoint 6, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:52
+52	    IMDB cs216_imdb;
+IMDB::IMDB (this=0x7fffffffdef0) at imdb.cpp:14
+14	IMDB::IMDB()
+No symbol "part" in current context.
+Continuing.
+
+Breakpoint 7, main (argc=2, argv=0x7fffffffe478) at Lab10.cpp:63
+63	        iss>>ws;
+No symbol "part" in current context.

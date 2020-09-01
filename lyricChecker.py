@@ -8,7 +8,7 @@ indecent_list = ["piss", "cock", "pussy", "prick", "snatch"]
 profane_list  = ["fuck", "fucking", "fucked", "fucks", "shit", "cunt", "twat", "poon", "tits", "cum"]
 questionable_list = ["asshole", "bastard", "goddamn", "god damn", "bitch", "nigga", "nigger", "slut", "crap",
                      "turd", "poop", "ass", "douche", "damn", "hell", "penis", "vagina", "masturbation", 
-                     "butt", "balls", "fag", "faggot"]
+                     "butt", "balls", "fag", "faggot","fags"]
 
 
 def get_input_file(file_name):
@@ -17,8 +17,8 @@ def get_input_file(file_name):
     return str(contents)
 
 def compare_words(file):
-    file.lower()
-    sep_text = file.split()
+    file_lower = file.lower()
+    sep_text = file_lower.split()
     is_clean = True
     if set(indecent_list).intersection(sep_text):
         print("Indecent:")
